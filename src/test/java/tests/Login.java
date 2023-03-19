@@ -13,7 +13,5 @@ public class Login extends TestBase {
         app.getUser().pause(5000);
 
         Assert.assertTrue(app.getUser().isLogged());
-
-
     }
 }
