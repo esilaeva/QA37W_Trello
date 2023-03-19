@@ -1,5 +1,6 @@
 package manage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HelperBase {
@@ -9,4 +10,23 @@ public class HelperBase {
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
+
+    public void type(By locator, String text) {
+        click(locator);
+        wd.findElement(locator).clear();
+        wd.findElement(locator).sendKeys(text);
+    }
+
+    public void click(By by) {
+        wd.findElement(by).click();
+    }
+
+    public void pause(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
