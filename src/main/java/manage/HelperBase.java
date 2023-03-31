@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HelperBase {
-
     WebDriver wd;
 
     public HelperBase(WebDriver wd) {
@@ -17,14 +16,14 @@ public class HelperBase {
         wd.findElement(locator).sendKeys(text);
     }
 
-    public void click(By by) {
-        wd.findElement(by).click();
+    public void click(By locator) {
+        wd.findElement(locator).click();
     }
 
-    public void pause(int millis) {
-        try {
+    public void pause(int millis){
+        try{
             Thread.sleep(millis);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e){
             e.printStackTrace();
         }
     }
