@@ -1,14 +1,9 @@
 package manage;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 
-import javax.swing.*;
 import java.time.Duration;
 
 public class ApplicationManager {
@@ -16,6 +11,8 @@ public class ApplicationManager {
 
     UserHelper user;
     BoardHelper board;
+    ListHelper list;
+    CardHelper card;
 
     public void init() {
         ChromeOptions options = new ChromeOptions();
@@ -28,8 +25,9 @@ public class ApplicationManager {
 
         user = new UserHelper(wd);
         board = new BoardHelper(wd);
+        list = new ListHelper(wd);
+        card = new CardHelper(wd);
         user.login("emsilaeva@gmail.com", "sL34@kG2buD");
-
     }
 
     public UserHelper getUser() {
@@ -40,9 +38,22 @@ public class ApplicationManager {
         return board;
     }
 
+    public ListHelper getList() {
+        return list;
+    }
+
+    public CardHelper getCard() {
+        return card;
+    }
+
+    public String getUrl(){
+        return wd.getCurrentUrl();
+    }
+
     public void quit() {
         wd.close();
         wd.quit();
     }
+
 
 }

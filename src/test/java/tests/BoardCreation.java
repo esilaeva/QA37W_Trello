@@ -40,15 +40,15 @@ public class BoardCreation extends TestBase {
         app.getBoard().returnToHomePage();
         app.getBoard().pause(2000);
 
-        int boardCountAfterCreation= app.getBoard().getBoardCount();
+        int boardCountAfterCreation = app.getBoard().getBoardCount();
 
-        Assert.assertEquals(boardCountAfterCreation,boardCountBeforeCreation+1);
+        Assert.assertEquals(boardCountAfterCreation, boardCountBeforeCreation + 1);
 
 
     }
 
     @Test
-    public void boardCreation3(){
+    public void boardCreation3() {
         Board board = Board.builder().title("qa37new").build();
         app.getBoard().startBoardCreation();
         app.getBoard().pause(2000);
@@ -62,13 +62,15 @@ public class BoardCreation extends TestBase {
 
         Assert.assertTrue(app.getBoard().isCreated());
     }
+
     @Test
-    public void refuseBoardCreation(){
+    public void refuseBoardCreation() {
         app.getBoard().initBoardCreationFromHeader();
         app.getBoard().closeCreationWindow();
     }
+
     @Test
-    public void refuseBoardCreation2(){
+    public void refuseBoardCreation2() {
         app.getBoard().initBoardCreationFromHeader();
         app.getBoard().returnToCreationPage();
     }

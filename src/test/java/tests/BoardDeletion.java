@@ -2,10 +2,10 @@ package tests;
 
 import org.testng.annotations.Test;
 
-public class BoardDeletion extends TestBase{
+public class BoardDeletion extends TestBase {
 
     @Test
-    public void boardDeletion(){
+    public void boardDeletion() {
         app.getBoard().clickTheFirstBoard();
         app.getBoard().pause(2000);
         app.getBoard().openSideBar();
@@ -13,8 +13,9 @@ public class BoardDeletion extends TestBase{
         app.getBoard().closeBoard();
         app.getBoard().deleteBoard();
     }
+
     @Test
-    public void refuseBoardDeletion(){
+    public void refuseBoardDeletion() {
         app.getBoard().clickTheFirstBoard();
         app.getBoard().pause(3000);
         app.getBoard().openSideBar();

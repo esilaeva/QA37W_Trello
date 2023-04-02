@@ -26,5 +26,6 @@ public class Login extends TestBase {
 
         Assert.assertTrue(app.getUser().isLogged());
 
+
     }
 }
